@@ -1,0 +1,472 @@
+/* ==========================================================================
+   CSS VARIABLES & DESIGN SYSTEM (Theme Engine)
+   ========================================================================== */
+:root {
+    /* Color Palette - Light Theme Default */
+    --bg-primary: #f8fafc;        /* Slate 50 */
+    --bg-secondary: #ffffff;      /* White */
+    --bg-tertiary: #f1f5f9;       /* Slate 100 */
+    --text-primary: #0f172a;      /* Slate 900 */
+    --text-secondary: #475569;    /* Slate 600 */
+    --text-tertiary: #64748b;     /* Slate 500 */
+    
+    --accent: #2563eb;            /* Blue 600 */
+    --accent-hover: #1d4ed8;      /* Blue 700 */
+    --border-color: #cbd5e1;      /* Slate 300 */
+    --shadow-color: rgba(15, 23, 42, 0.05);
+    
+    /* Layout Variables */
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --container-width: 1200px;
+    --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+    /* Color Palette - Dark Theme */
+    --bg-primary: #0f172a;        /* Slate 900 */
+    --bg-secondary: #1e293b;      /* Slate 800 */
+    --bg-tertiary: #1e293b;       /* Slate 800 */
+    --text-primary: #f8fafc;      /* Slate 50 */
+    --text-secondary: #cbd5e1;    /* Slate 300 */
+    --text-tertiary: #94a3b8;     /* Slate 400 */
+    
+    --accent: #3b82f6;            /* Blue 500 */
+    --accent-hover: #60a5fa;      /* Blue 400 */
+    --border-color: #334155;      /* Slate 700 */
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   BASE & RESET STYLES
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Skip-to-content logic */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    background-color: var(--accent);
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    z-index: 1000;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+/* Global Outline overrides for keyboard navigation compliance */
+*:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
+/* ==========================================================================
+   FLEXBOX COMPONENTS: HEADER, NAV, FOOTER
+   ========================================================================== */
+header {
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 6px -1px var(--shadow-color);
+    transition: var(--transition-smooth);
+}
+
+.header-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-md);
+    transition: var(--transition-smooth);
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+    color: var(--accent);
+    background-color: var(--bg-tertiary);
+}
+
+/* Dynamic theme button stylings */
+#theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition-smooth);
+}
+
+#theme-toggle:hover {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+}
+
+/* Footer layout */
+footer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    padding: 2.5rem 1.5rem;
+    margin-top: 5rem;
+    transition: var(--transition-smooth);
+}
+
+.footer-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+/* ==========================================================================
+   CSS GRID COMPONENTS: ABOUT, PROJECTS, SKILLS
+   ========================================================================== */
+main {
+    max-width: var(--container-width);
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+/* About Layout with Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Skills matrix layout with responsive CSS Grid */
+.skills-grid,
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Generic Card Component */
+.card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px var(--shadow-color);
+    transition: var(--transition-smooth);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px var(--shadow-color);
+}
+
+.aside-card {
+    border-left: 5px solid var(--accent);
+}
+
+.qualifications-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.qualifications-list li {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.skill-category h3 {
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+.skill-category ul {
+    list-style-position: inside;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* ==========================================================================
+   HERO & PROJECT ELEMENTS
+   ========================================================================== */
+#hero {
+    padding: 4rem 1.5rem;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 6px -1px var(--shadow-color);
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.hero-wrapper h1 {
+    font-size: 2.25rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-wrapper p {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto 2.5rem auto;
+}
+
+.cta-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Standard Button components with transitions */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: var(--transition-smooth);
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: #ffffff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+/* Project Cards details styling */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-title {
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-style: italic;
+    color: var(--text-tertiary);
+    margin-bottom: 1.5rem;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 1rem 0 2rem 0;
+}
+
+.tech-tags li {
+    background-color: var(--bg-tertiary);
+    color: var(--text-secondary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   CONTACT FORM STYLING
+   ========================================================================== */
+.form-card {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: none;
+}
+
+legend {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+}
+
+.required {
+    color: #ef4444;
+}
+
+.form-instruction {
+    margin-bottom: 1.5rem;
+}
+
+.form-help {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+}
+
+input:hover, textarea:hover, select:hover {
+    border-color: var(--text-secondary);
+}
+
+/* Customized Select Styling */
+.select-wrapper {
+    position: relative;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Media Queries)
+   ========================================================================== */
+@media (min-width: 600px) {
+    .cta-group {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 768px) {
+    /* Responsive grid structure upgrades for larger tablet & desktop viewports */
+    .about-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .footer-container p {
+        order: 1;
+    }
+    
+    .footer-links {
+        order: 2;
+    }
+}
+
+/* Accessibility: Turn off layout motion for prefers-reduced-motion profiles */
+@media (prefers-reduced-motion: reduce) {
+    body {
+        transition: none;
+    }
+    .card:hover {
+        transform: none;
+    }
+    .btn, .nav-links a, #theme-toggle {
+        transition: none;
+    }
+}

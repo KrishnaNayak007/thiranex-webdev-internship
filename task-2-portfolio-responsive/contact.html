@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with Krishna Nayak regarding collaborative projects, full stack Python/Django contracts, or React developments.">
+    
+    <meta property="og:title" content="Krishna Nayak | Contact Channel">
+    <meta property="og:description" content="Reach out to Krishna Nayak through an accessible, validation-ready contact interface.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/contact.html">
+    <meta property="og:image" content="assets/images/placeholder.png">
+
+    <title>Krishna Nayak | Contact Me</title>
+
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/theme.js" defer></script>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" aria-label="Krishna Nayak Home"><strong>KN</strong></a>
+            </div>
+            <nav aria-label="Primary Navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html" aria-current="page">Contact</a></li>
+                    <li>
+                        <button id="theme-toggle" aria-label="Toggle dark/light color theme">
+                            <span id="theme-icon" aria-hidden="true">🌓</span>
+                            <span id="theme-text">Theme</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="contact" aria-labelledby="contact-heading" class="contact-section">
+            <h1 id="contact-heading" class="section-title">Collaborate &amp; Reach Out</h1>
+            <p class="contact-desc">Fill out the fully accessible form below to start a technical project conversation.</p>
+
+            <form action="#" method="POST" autocomplete="on" aria-label="Professional Inquiry Form" class="card form-card">
+                
+                <fieldset>
+                    <legend>Contact Information</legend>
+                    
+                    <p class="form-instruction" id="required-note">Fields marked with an asterisk (<span aria-hidden="true" class="required">*</span>) are mandatory.</p>
+
+                    <div class="form-group">
+                        <label for="name">Full Name <span aria-hidden="true" class="required">*</span></label>
+                        <input type="text" id="name" name="name" required aria-required="true" autocomplete="name" placeholder="e.g., Krishna Nayak">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span aria-hidden="true" class="required">*</span></label>
+                        <input type="email" id="email" name="email" required aria-required="true" autocomplete="email" aria-describedby="email-help" placeholder="e.g., krishna@domain.com">
+                        <span id="email-help" class="form-help">We will never share your email address.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Inquiry Subject <span aria-hidden="true" class="required">*</span></label>
+                        <div class="select-wrapper">
+                            <select id="subject" name="subject" required aria-required="true">
+                                <option value="" disabled selected>Please choose an option...</option>
+                                <option value="collaboration">Project Collaboration</option>
+                                <option value="recruitment">Job Opportunity / Recruitment</option>
+                                <option value="general">General Professional Inquiry</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Detailed Message <span aria-hidden="true" class="required">*</span></label>
+                        <textarea id="message" name="message" rows="6" required aria-required="true" aria-describedby="message-help" placeholder="Detail your project goals or inquiry here..."></textarea>
+                        <span id="message-help" class="form-help">Provide a comprehensive overview of your request.</span>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" aria-label="Submit your inquiry to Krishna Nayak">Send Message</button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Krishna Nayak. All rights reserved.</p>
+            <nav aria-label="Footer Social Navigation">
+                <ul class="footer-links">
+                    <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile (opens in a new tab)">GitHub</a></li>
+                    <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile (opens in a new tab)">LinkedIn</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore advanced technical projects by Krishna Nayak, including DrishtiRakshak AI and the Ambulance Tracking System.">
+    
+    <meta property="og:title" content="Krishna Nayak | Portfolio Projects">
+    <meta property="og:description" content="Detailed engineering reviews of the DrishtiRakshak AI and Ambulance Tracking systems by Krishna Nayak.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/projects.html">
+    <meta property="og:image" content="assets/images/placeholder.png">
+
+    <title>Krishna Nayak | Portfolio Projects</title>
+
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/theme.js" defer></script>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" aria-label="Krishna Nayak Home"><strong>KN</strong></a>
+            </div>
+            <nav aria-label="Primary Navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="projects.html" aria-current="page">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <button id="theme-toggle" aria-label="Toggle dark/light color theme">
+                            <span id="theme-icon" aria-hidden="true">🌓</span>
+                            <span id="theme-text">Theme</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="projects-showcase" aria-labelledby="showcase-heading">
+            <h1 id="showcase-heading" class="section-title">Selected Engineering Work</h1>
+            <p class="showcase-desc">Detailed architectural case studies highlighting implementation details, technology choices, and structural outcomes.</p>
+
+            <div class="projects-grid">
+                <!-- Case Study 1: DrishtiRakshak AI -->
+                <article class="card project-card" aria-labelledby="proj-drishti-title">
+                    <header>
+                        <h2 id="proj-drishti-title" class="project-title">DrishtiRakshak AI</h2>
+                        <p class="tagline">Intellectual safety validation system driven by modern machine learning models.</p>
+                    </header>
+                    
+                    <section class="project-details">
+                        <h3>Project Overview</h3>
+                        <p>DrishtiRakshak AI is a specialized image recognition and monitoring module designed to analyze, process, and flag environment safety levels in real-time. The system processes video streams, runs statistical evaluations, and generates localized reports.</p>
+                        
+                        <h3>Technical Stack &amp; Architecture</h3>
+                        <ul class="tech-tags">
+                            <li>Python</li>
+                            <li>Django Framework</li>
+                            <li>Computer Vision APIs</li>
+                        </ul>
+                    </section>
+                    
+                    <footer class="project-footer">
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="View DrishtiRakshak AI source repository on GitHub (opens in a new tab)">Access Codebase</a>
+                    </footer>
+                </article>
+
+                <!-- Case Study 2: Ambulance Tracking System -->
+                <article class="card project-card" aria-labelledby="proj-ambulance-title">
+                    <header>
+                        <h2 id="proj-ambulance-title" class="project-title">Ambulance Tracking System</h2>
+                        <p class="tagline">Dynamic telemetry coordination network routing urgent medical dispatch.</p>
+                    </header>
+                    
+                    <section class="project-details">
+                        <h3>Project Overview</h3>
+                        <p>Designed to address system delays during emergencies, this system coordinates telemetry and paths of first responders. It dynamically maps coordinates, monitors delays, and alerts terminal centers utilizing precise WebSocket-based updates.</p>
+                        
+                        <h3>Technical Stack &amp; Architecture</h3>
+                        <ul class="tech-tags">
+                            <li>React Components</li>
+                            <li>Django Channels (WebSockets)</li>
+                            <li>GIS Databases</li>
+                        </ul>
+                    </section>
+                    
+                    <footer class="project-footer">
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="View Ambulance Tracking System source repository on GitHub (opens in a new tab)">Access Codebase</a>
+                    </footer>
+                </article>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Krishna Nayak. All rights reserved.</p>
+            <nav aria-label="Footer Social Navigation">
+                <ul class="footer-links">
+                    <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile (opens in a new tab)">GitHub</a></li>
+                    <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile (opens in a new tab)">LinkedIn</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>

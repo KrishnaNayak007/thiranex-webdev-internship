@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio of Krishna Nayak, a Computer Science Engineering student at ITER, SOA University, specializing in Python, Django, React, and robust accessible software architectures.">
+    <meta name="keywords" content="Krishna Nayak, Computer Science Engineer, ITER SOA University, DrishtiRakshak AI, Ambulance Tracking System, Full Stack Developer">
+    <meta name="author" content="Krishna Nayak">
+    
+    <meta property="og:title" content="Krishna Nayak | Portfolio Home">
+    <meta property="og:description" content="Discover professional software engineering projects, accessible design systems, and backend development architectures by Krishna Nayak.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://yourdomain.com/index.html">
+    <meta property="og:image" content="assets/images/placeholder.png">
+    
+    <title>Krishna Nayak | Portfolio Home</title>
+
+    <!-- Pre-render theme application script to prevent Flash of Unstyled Content (FOUC) -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+
+    <!-- Global CSS Architecture -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Deferred Theme Switcher Event Listener -->
+    <script src="assets/js/theme.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Krishna Nayak",
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "ITER, SOA University"
+      },
+      "jobTitle": "Software Engineer",
+      "knowsAbout": ["HTML5", "CSS3", "JavaScript", "React", "Python", "Django", "Git", "GitHub"],
+      "url": "https://yourdomain.com"
+    }
+    </script>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" aria-label="Krishna Nayak Home"><strong>KN</strong></a>
+            </div>
+            <nav aria-label="Primary Navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html" aria-current="page">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <button id="theme-toggle" aria-label="Toggle dark/light color theme">
+                            <span id="theme-icon" aria-hidden="true">🌓</span>
+                            <span id="theme-text">Theme</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        
+        <!-- Hero / Summary Section -->
+        <section id="hero" aria-labelledby="hero-heading">
+            <div class="hero-wrapper">
+                <h1 id="hero-heading">Crafting Highly Accessible, Robust Software Architectures</h1>
+                <p>I am a Computer Science Engineering student at ITER, SOA University, focusing on writing clean, scalable Python/Django and React applications.</p>
+                <div class="cta-group">
+                    <a href="assets/documents/resume.pdf" class="btn btn-primary" download aria-label="Download Krishna Nayak's Professional Resume PDF">Download Resume</a>
+                    <a href="projects.html" class="btn btn-secondary" aria-label="View technical project case studies">View Work</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Background / About Section -->
+        <section id="about" aria-labelledby="about-heading">
+            <h2 id="about-heading" class="section-title">About Me</h2>
+            <p class="about-lead">Driven by rigorous problem solving and design standards, I specialize in engineering systems that bridge intelligent algorithms with robust accessible user interfaces.</p>
+            
+            <div class="about-grid">
+                <article class="card">
+                    <h3>My Professional Philosophy</h3>
+                    <p>I believe code should not only compile but also be maintainable, accessible, and clean. From semantic markup patterns to optimized server-side queries, every abstraction layer matters.</p>
+                </article>
+
+                <!-- Aside containing quick structural metadata -->
+                <aside class="card aside-card" aria-label="Key Qualifications Summary">
+                    <h3>Qualifications</h3>
+                    <ul class="qualifications-list">
+                        <li><strong>Education:</strong> B.Tech in Computer Science Engineering</li>
+                        <li><strong>Institution:</strong> ITER, SOA University</li>
+                        <li><strong>Focus Areas:</strong> Full Stack Web Engineering, Artificial Intelligence Systems</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Technical Skill Matrix Section -->
+        <section id="skills" aria-labelledby="skills-heading">
+            <h2 id="skills-heading" class="section-title">Technical Skillset Matrix</h2>
+            <div class="skills-grid">
+                <div class="card skill-category">
+                    <h3>Frontend Architecture</h3>
+                    <ul>
+                        <li>HTML5 &amp; Semantic Systems</li>
+                        <li>CSS3 Layout Engines (Grid &amp; Flexbox)</li>
+                        <li>Modern JavaScript &amp; React</li>
+                    </ul>
+                </div>
+                <div class="card skill-category">
+                    <h3>Backend &amp; Cloud Systems</h3>
+                    <ul>
+                        <li>Python Development</li>
+                        <li>Django Web Framework</li>
+                        <li>Database Management</li>
+                    </ul>
+                </div>
+                <div class="card skill-category">
+                    <h3>Developer Workflows &amp; Tools</h3>
+                    <ul>
+                        <li>Git Version Control</li>
+                        <li>GitHub Enterprise Workflows</li>
+                        <li>WCAG 2.1 Accessibility Auditing</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Krishna Nayak. All rights reserved.</p>
+            <nav aria-label="Footer Social Navigation">
+                <ul class="footer-links">
+                    <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile (opens in a new tab)">GitHub</a></li>
+                    <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile (opens in a new tab)">LinkedIn</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>

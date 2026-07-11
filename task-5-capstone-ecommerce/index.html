@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modern, highly responsive E-Commerce Single Page Application built with custom hash routing, a state-driven cart, and real-time product catalog filtering.">
+    <title>PrimeTech Storefront | Modern SPA Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Non-blocking theme initialization to prevent Flash of Unstyled Content -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+    <!-- Defer application engine script -->
+    <script src="assets/js/app.js" defer></script>
+</head>
+<body>
+
+    <a href="#app-view" class="skip-link">Skip to main shopping content</a>
+
+    <header class="app-header">
+        <div class="header-container">
+            <div class="brand">
+                <a href="#home" aria-label="PrimeTech Home"><strong>PrimeTech</strong></a>
+            </div>
+            
+            <nav aria-label="Storefront Navigation">
+                <ul class="nav-links">
+                    <li><a href="#home" id="nav-home">Home</a></li>
+                    <li><a href="#catalog" id="nav-catalog">Catalog</a></li>
+                    <li>
+                        <a href="#cart" id="nav-cart" class="cart-nav-link" aria-label="View Shopping Cart">
+                            Cart
+                            <span id="cart-badge" class="badge" aria-hidden="true">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mount node for active views dynamically rendered by client-side routing -->
+    <main id="app-view" aria-live="polite">
+        <!-- SPA View template blocks will render here -->
+    </main>
+
+    <footer class="app-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 PrimeTech Storefront Capstone System. All rights reserved.</p>
+            <p class="architecture-tag">SPA Architecture | Powered by Native ES6 Router</p>
+        </div>
+    </footer>
+
+</body>
+</html>

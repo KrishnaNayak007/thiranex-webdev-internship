@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A real-time meteorological dashboard utilizing chained geocoding REST APIs to fetch weather diagnostics dynamically.">
+    <title>Live Meteorology Dashboard | Open-Meteo API</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/weather.js" defer></script>
+</head>
+<body>
+
+    <a href="#main-dashboard" class="skip-link">Skip to dashboard</a>
+
+    <main id="main-dashboard" class="dashboard-wrapper">
+        <header class="main-header">
+            <h1>Meteorology Dashboard</h1>
+            <p>Access real-time meteorological calculations powered by Open-Meteo APIs.</p>
+        </header>
+
+        <div class="dashboard-layout">
+            
+            <!-- Left Side: Control panel containing inputs and history -->
+            <section class="control-panel" aria-labelledby="control-heading">
+                <h2 id="control-heading" class="visually-hidden">Search Controls</h2>
+                
+                <div class="card">
+                    <form id="search-form">
+                        <div class="form-group">
+                            <label for="city-input">Search City Name</label>
+                            <input 
+                                type="text" 
+                                id="city-input" 
+                                required 
+                                placeholder="e.g., Bhubaneswar, London" 
+                                autocomplete="off"
+                            >
+                        </div>
+                        <button type="submit" id="search-btn" class="btn btn-primary">
+                            <span id="btn-text">Search Location</span>
+                            <span id="btn-spinner" class="spinner hidden" aria-hidden="true"></span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Search History container -->
+                <div class="card history-card">
+                    <h3>Recent Queries</h3>
+                    <div id="search-history" class="history-tray" aria-label="Recent search queries list">
+                        <!-- Javascript will inject button pills dynamically -->
+                        <p class="no-history">No recent searches.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Side: Weather output metrics -->
+            <section class="display-panel" aria-live="polite" aria-labelledby="display-heading">
+                <h2 id="display-heading" class="visually-hidden">Weather Output Metrics</h2>
+                
+                <!-- Persistent Alert Error box -->
+                <div id="error-box" class="error-card hidden" role="alert">
+                    <span class="error-icon" aria-hidden="true">⚠️</span>
+                    <p id="error-message">Error Message Placeholder</p>
+                </div>
+
+                <!-- Display metrics card -->
+                <article id="weather-card" class="card main-weather-card hidden">
+                    <header class="weather-header">
+                        <div>
+                            <h3 id="location-title">City, Country</h3>
+                            <p id="condition-desc" class="condition-text">Clear Skies</p>
+                        </div>
+                        <span id="weather-graphic" class="weather-icon" aria-hidden="true">☀️</span>
+                    </header>
+
+                    <div class="metrics-grid">
+                        <div class="metric-block">
+                            <span class="metric-label">Temperature</span>
+                            <span class="metric-value"><span id="temp-val">--</span>&deg;C</span>
+                        </div>
+                        <div class="metric-block">
+                            <span class="metric-label">Humidity</span>
+                            <span class="metric-value"><span id="humidity-val">--</span>%</span>
+                        </div>
+                        <div class="metric-block">
+                            <span class="metric-label">Wind Velocity</span>
+                            <span class="metric-value"><span id="wind-val">--</span> km/h</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Static state before search runs -->
+                <div id="weather-placeholder" class="card placeholder-card">
+                    <span class="placeholder-graphic" aria-hidden="true">🌍</span>
+                    <p>Enter a city name or select a recent query to calculate real-time diagnostics.</p>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+</body>
+</html>

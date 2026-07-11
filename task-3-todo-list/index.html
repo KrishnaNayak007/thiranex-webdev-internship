@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A state-driven, accessible Task Manager application built with optimized event delegation and persistent client-side storage.">
+    <title>Task Manager Dashboard | Productivity Hub</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Defer loading of JS to ensure DOM is ready -->
+    <script src="assets/js/app.js" defer></script>
+</head>
+<body>
+
+    <a href="#main-dashboard" class="skip-link">Skip to dashboard content</a>
+
+    <main id="main-dashboard" class="dashboard-container">
+        
+        <!-- Header & Completion Metric Metrics -->
+        <header class="dashboard-header">
+            <h1>Task Manager</h1>
+            <p class="subtitle">Focus on what matters most, one step at a time.</p>
+            
+            <div class="metrics-card" aria-live="polite">
+                <div class="metrics-text">
+                    <h2>Completion Progress</h2>
+                    <span id="progress-summary" class="progress-ratio">0 of 0 tasks completed</span>
+                </div>
+                <div class="progress-bar-container" aria-hidden="true">
+                    <div id="progress-fill" class="progress-bar-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Input Interface Section -->
+        <section id="task-creation" aria-labelledby="form-heading" class="card">
+            <h2 id="form-heading" class="visually-hidden">Create New Task</h2>
+            <form id="todo-form">
+                <div class="form-row">
+                    <div class="input-wrapper">
+                        <label for="task-input" class="visually-hidden">Task Description</label>
+                        <input 
+                            type="text" 
+                            id="task-input" 
+                            name="task" 
+                            required 
+                            maxlength="120"
+                            placeholder="What needs to be accomplished?" 
+                            autocomplete="off"
+                        >
+                    </div>
+                    <button type="submit" id="add-btn" aria-label="Add new task to list">Add Task</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Filter & Task List Interface -->
+        <section id="task-board" aria-labelledby="board-heading">
+            <h2 id="board-heading" class="visually-hidden">Your Task Board</h2>
+            
+            <!-- Filter Controls -->
+            <div class="filter-controls" role="tablist" aria-label="Filter tasks">
+                <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all" id="tab-all" aria-controls="task-list">All Tasks</button>
+                <button class="filter-btn" role="tab" aria-selected="false" data-filter="active" id="tab-active" aria-controls="task-list">Active</button>
+                <button class="filter-btn" role="tab" aria-selected="false" data-filter="completed" id="tab-completed" aria-controls="task-list">Completed</button>
+            </div>
+
+            <!-- Main Dynamic Task list container -->
+            <ul id="task-list" class="task-list" aria-live="polite" aria-labelledby="board-heading">
+                <!-- JavaScript state-driven rendering will populate this dynamically -->
+            </ul>
+
+            <!-- Dynamic empty-state wrapper -->
+            <div id="empty-state" class="empty-state hidden" aria-hidden="true">
+                <p id="empty-state-text">No tasks matching your current view.</p>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
